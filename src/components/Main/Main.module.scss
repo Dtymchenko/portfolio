@@ -1,0 +1,14 @@
+.main {
+ * {
+    font-size: 20px;
+    line-height: 30px;
+ }
+ p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+ }
+ :nth-last-child(1) {
+    margin-bottom: 0;
+ }
+}
