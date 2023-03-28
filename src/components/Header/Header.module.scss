@@ -15,7 +15,6 @@
     align-items: center;
     border-bottom: 1px solid #eaeaea;
     margin-bottom: 10px;
-    // margin-bottom: calc(var(--header-height) + 10px);
 }
 header svg:hover{
     fill: red;
@@ -53,9 +52,11 @@ header svg:hover{
 
 .signup {
     min-width: 120px;
+    // max-width: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-right: 5px;
     background-color: rgb(141, 120, 120);
     border: none;
     border-radius: 5px;
@@ -70,6 +71,11 @@ header svg:hover{
         fill: red;
     }
 } 
+
+.logout {
+    max-width: 250px;
+    overflow: hidden;
+}
 
 h2 {
     text-transform: uppercase;

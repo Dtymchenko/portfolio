@@ -1,46 +1,52 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  items: [],
-  basketItems: [],
-  basketOpened: false,
-  searchValue: "",
-  isLoading: true,
+interface initialState {
+    isLoading: boolean,
+    email: string | null,
+    token: string | null,
+    id: string | null,
+  }
+
+const initialState:initialState = {
+  isLoading: false,
+  email: null,
+  token: null,
+  id: null,
 };
 
 export const mainSlice = createSlice({
   name: "main",
   initialState,
   reducers: {
-    toggleBasketOpened: (state) => {
-      state.basketOpened = !state.basketOpened;
+    setUser(state, action) {
+        state.email = action.payload.email
+        state.token = action.payload.token
+        state.id = action.payload.id
+        localStorage.setItem('email', action.payload.email)
+        localStorage.setItem('token', action.payload.token)
+        localStorage.setItem('id', action.payload.id)
     },
-    setItems: (state, action) => {
-      state.items = action.payload;
+    getUser(state) {
+        state.email = localStorage.getItem('email')
+        state.token = localStorage.getItem('token')
+        state.id = localStorage.getItem('id')
     },
-    setBasketItems: (state, action) => {
-      state.basketItems = action.payload;
+    removeUser(state) {
+        state.email = null
+        state.token = null
+        state.id = null
+        localStorage.clear()
     },
-    setSearchValue: (state, action) => {
-      state.searchValue = action.payload;
-    },
-    setIsLoadingTrue: (state) => {
-      state.isLoading = true;
-    },
-    setIsLoadingFalse: (state) => {
-      state.isLoading = false;
+    setIsLoading(state, action) {
+        state.isLoading = action.payload
     },
   },
 });
 
-// Action creators are generated for each case reducer function
 export const {
-  toggleBasketOpened,
-  setItems,
-  setBasketItems,
-  setIsLoadingTrue,
-  setIsLoadingFalse,
-  setSearchValue,
+    setUser,
+    getUser,
+    removeUser,
 } = mainSlice.actions;
 
 export default mainSlice.reducer;

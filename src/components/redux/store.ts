@@ -6,3 +6,6 @@ export const store = configureStore({
     main: mainReducer,
   },
 });
+
+export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>
