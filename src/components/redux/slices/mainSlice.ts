@@ -1,14 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface initialState {
-    isLoading: boolean,
     email: string | null,
     token: string | null,
     id: string | null,
   }
 
 const initialState:initialState = {
-  isLoading: false,
   email: null,
   token: null,
   id: null,
@@ -36,9 +34,6 @@ export const mainSlice = createSlice({
         state.token = null
         state.id = null
         localStorage.clear()
-    },
-    setIsLoading(state, action) {
-        state.isLoading = action.payload
     },
   },
 });

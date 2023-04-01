@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Header.module.scss'
 import { Link } from "react-router-dom";
-import { useAuth } from '../../hooks/use-auth';
+// import { useAuth } from '../../hooks/use-auth';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
 import { getUser, removeUser } from '../redux/slices/mainSlice';
 

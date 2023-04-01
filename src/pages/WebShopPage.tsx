@@ -1,10 +1,10 @@
 import React from 'react'
+import Webshop from '../components/WebShop/Webshop'
+
 
 const WebShopPage = () => {
   return (
-    <div>
-      
-    </div>
+    <Webshop/>
   )
 }
 

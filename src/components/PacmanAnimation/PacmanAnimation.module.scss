@@ -1,0 +1,76 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    min-height: 100%;
+    width: 20%;
+  }
+  
+  .pacman {
+    position: relative;
+    background: transparent;
+    z-index: 1;
+  }
+  .pacman::before, .pacman::after {
+    position: absolute;
+    right: -35px;
+    display: block;
+    border-radius: 50%;
+    content: "";
+    height: 0px;
+    width: 0px;
+  }
+  .pacman::before {
+    animation: chunk-top 0.5s ease infinite;
+    border: 35px solid #FFCC00;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+  }
+  .pacman::after {
+    animation: chunk-bottom 0.5s ease infinite;
+    border: 35px solid #FFCC00;
+    border-right-color: transparent;
+    border-top-color: transparent;
+  }
+  
+  .path {
+    display: flex;
+    justify-content: space-around;
+    min-height: 10%;
+    animation: eating-path .5s linear infinite;
+    width: 100%;
+  }
+  .path::before {
+    background: black;
+    border-radius: 50%;
+    content: "";
+    height: 1rem;
+    width: 1rem;
+  }
+  
+  @keyframes chunk-top {
+    0%, 100% {
+      transform: rotate(45deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+  }
+  @keyframes chunk-bottom {
+    0%, 100% {
+      transform: rotate(50deg);
+    }
+    50% {
+      transform: rotate(90deg);
+    }
+  }
+  @keyframes eating-path {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }

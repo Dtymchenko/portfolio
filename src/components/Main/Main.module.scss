@@ -1,4 +1,9 @@
+.wrapper {
+   display: flex;
+}
+
 .main {
+   flex-basis: 80%;
  * {
     font-size: 20px;
     line-height: 30px;
@@ -10,5 +15,9 @@
  }
  :nth-last-child(1) {
     margin-bottom: 0;
+ }
+ a {
+   color: yellow;
+   background-color: rgb(177, 142, 142);
  }
 }

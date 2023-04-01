@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { IWebShopItem } from "../../../interface";
 
 interface initialState {
-  items: IWebShopItem[] | null,
-  basketItems: IWebShopItem[] | null,
+  items: IWebShopItem[],
+  basketItems: IWebShopItem[],
   basketOpened: boolean,
-  searchValue: string | null,
+  searchValue: string,
   isLoading: boolean,
 }
 
@@ -33,22 +33,17 @@ export const webShopSlice = createSlice({
     setSearchValue: (state, action) => {
       state.searchValue = action.payload;
     },
-    setIsLoadingTrue: (state) => {
-      state.isLoading = true;
-    },
-    setIsLoadingFalse: (state) => {
-      state.isLoading = false;
+    setIsLoading: (state, action) => {
+      state.isLoading = action.payload;
     },
   },
 });
 
-// Action creators are generated for each case reducer function
 export const {
   toggleBasketOpened,
   setItems,
   setBasketItems,
-  setIsLoadingTrue,
-  setIsLoadingFalse,
+  setIsLoading,
   setSearchValue,
 } = webShopSlice.actions;
 

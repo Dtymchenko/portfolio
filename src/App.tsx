@@ -10,6 +10,8 @@ import ProjectsPage from './pages/ProjectsPage';
 import SignUpPage from './pages/SignUpPage';
 import LoginPage from './pages/LoginPage';
 import ForgotPassPage from './pages/ForgotPassPage';
+import NotFoundPage from './pages/NotFoundPage';
+import WebShopPage from './pages/WebShopPage';
 
 function App() {
 
@@ -25,6 +27,8 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path='/forgot' element={<ForgotPassPage/>}/>
+        <Route path="*" element={<NotFoundPage />} />
+        <Route path="/projects/webshop/*" element={<WebShopPage />} />
       </Routes>
       </div>
       <Footer/>
