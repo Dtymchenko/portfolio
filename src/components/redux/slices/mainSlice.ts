@@ -4,12 +4,14 @@ interface initialState {
     email: string | null,
     token: string | null,
     id: string | null,
+    menuOpen: boolean,
   }
 
 const initialState:initialState = {
   email: null,
   token: null,
   id: null,
+  menuOpen: false,
 };
 
 export const mainSlice = createSlice({
@@ -35,6 +37,9 @@ export const mainSlice = createSlice({
         state.id = null
         localStorage.clear()
     },
+    setMenuOpen(state, action) {
+      state.menuOpen = action.payload
+  },
   },
 });
 
@@ -42,6 +47,7 @@ export const {
     setUser,
     getUser,
     removeUser,
+    setMenuOpen,
 } = mainSlice.actions;
 
 export default mainSlice.reducer;

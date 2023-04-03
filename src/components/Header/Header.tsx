@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from './Header.module.scss'
 import { Link } from "react-router-dom";
-// import { useAuth } from '../../hooks/use-auth';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
-import { getUser, removeUser } from '../redux/slices/mainSlice';
+import { getUser, removeUser, setMenuOpen } from '../redux/slices/mainSlice';
 
 const Header = () => {
 
+  const menuOpen = useAppSelector(state => state.main.menuOpen)
   const dispatch = useAppDispatch()
 
   React.useEffect(() => {
@@ -14,9 +14,14 @@ const Header = () => {
   },[])
   const email = useAppSelector(state => state.main.email)
 
+  const handleIconClick = (e:React.MouseEvent<HTMLElement>) => {
+    e.stopPropagation() 
+    dispatch(setMenuOpen(!menuOpen))
+  }
+
   return (
     <header>
-    <div className={styles.flex__container}>
+    <div className={styles.flex__container} onClick={() => dispatch(setMenuOpen(false))}>
       <div className={styles.headerLeft}>
         <Link to="/">
           <div className={styles.headerLink}>
@@ -35,6 +40,8 @@ const Header = () => {
         </div>
       </div>
       <div className={styles.headerMid}>
+        <div className={styles.burgerBtn} onClick={handleIconClick}><img width={50} src={menuOpen ? '/img/burger-close.png' : '/img/burger-open.png'}></img></div>
+        {/* <div className={styles.burgerBtn} onClick={() => dispatch(setMenuOpen(!menuOpen))}>{menuOpen? "Close" : "Open" }</div> */}
         <Link to="/about">
           <p>About me</p>
         </Link>

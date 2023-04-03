@@ -19,7 +19,7 @@ const Main = () => {
       <p>Authorization works with local storage, so it saves login.</p>
       <p>Also if you forgot password, recover function works (you will receive email).</p>
       <p>Used some animation to make it look more alive, for example you can check hover in footer and Pacman to the right :).</p>
-      <p>Don't forget to visit <span>&nbsp;<Link to='/projects'>projects page</Link></span>&nbsp;and check some of my pet-projects</p>
+      <p>Don't forget to visit <span>&nbsp;<Link to='/projects'>projects page</Link></span>&nbsp;and check some of my pet-projects.</p>
     </div>
     <PacmanAnimation/>
     </div>

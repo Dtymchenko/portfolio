@@ -1,14 +1,26 @@
+import React from 'react';
 import styles from './Drawer.module.scss'
 import { useAppDispatch, useAppSelector } from "./../../../hooks/redux-hooks";
 import { toggleBasketOpened, setBasketItems } from "../../redux/slices/webShopSlice";
-import axios from "axios";
+import axios from "axios"
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 const Drawer = () => {
   const dispatch = useAppDispatch();
   const items = useAppSelector((state) => state.webShop.basketItems);
   const basketSum = items?.reduce((acc, current) => acc + current.price, 0);
+  const basketOpened = useAppSelector((state) => state.webShop.basketOpened)
+  const basketRef = React.useRef(null)
+
 
   const onCardClose = () => dispatch(toggleBasketOpened());
+
+  React.useEffect(() => {
+    if (basketOpened && basketRef?.current) {
+      disableBodyScroll(basketRef?.current)
+    }
+    return () => clearAllBodyScrollLocks()
+  }, [])
 
   const onRemoveItem = (id:number) => {
     try {
@@ -23,7 +35,7 @@ const Drawer = () => {
 
   return (
     <div className={styles.drawer_overlay} onClick={onCardClose}>
-      <div className={styles.drawer} onClick={(e) => e.stopPropagation()}>
+      <div className={styles.drawer} ref={basketRef} onClick={(e) => e.stopPropagation()}>
         <h2>
           Basket
           <svg

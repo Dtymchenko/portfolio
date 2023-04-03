@@ -12,12 +12,25 @@ import LoginPage from './pages/LoginPage';
 import ForgotPassPage from './pages/ForgotPassPage';
 import NotFoundPage from './pages/NotFoundPage';
 import WebShopPage from './pages/WebShopPage';
+import BurgerMenu from './components/BurgerMenu/BurgerMenu';
+import { useAppSelector, useAppDispatch } from './hooks/redux-hooks';
+import { setMenuOpen } from './components/redux/slices/mainSlice';
 
 function App() {
+
+  const dispatch = useAppDispatch()
+
+  React.useEffect(() => {
+    dispatch(setMenuOpen(false))
+  },[])
+
+
+  const menuOpen = useAppSelector(state => state.main.menuOpen)
 
   return (
     <div className="wrapper">
       <Header/>
+      {menuOpen && <BurgerMenu />}
       <div className='content'>
       <Routes>
         <Route index element={<MainPage/>} />

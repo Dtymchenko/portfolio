@@ -100,90 +100,57 @@ span {
     cursor: pointer;
     text-align: center;
     border-radius: 20px;
-    transition: background 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
 }
 
 .headerMid p:hover {
     background-color: aqua;
 }
 
-@media (max-width: 360px) {
+@media (min-width: 360px) and (max-width: 766px) {
+
+    .headerLeft {
+        font-size: 10px;
+    }
     .headerLink {
         margin: 5px;
     }
     h2 {
-        font-size: 12px;
-        margin: 10px 5px 0 0;
+        margin-bottom: 5px;
     }
-    h4 {
-        font-size: 10px;
-        margin: -10px;
-    }
-    .headerMid p {
-        margin: 5px;
-        padding: 5px;
+    .headerMid a {
+        display: none;
     }
 
-    .headerRight button {
-        min-width: 45px;
-        margin: 5px;
+    .burgerBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        border-radius: 50%;
     }
 
-    .headerRight span {
+}
+
+@media (min-width: 767px)  {
+    .burgerBtn {
         display: none;
     }
 }
 
-@media (max-width: 375px) {
+@media (min-width: 767px) and (max-width: 961px) {
+    .headerLeft {
+        font-size: 10px;
+    }
     .headerLink {
         margin: 5px;
     }
     h2 {
-        font-size: 12px;
-        margin: 10px 5px 0 0;
-    }
-    h4 {
-        font-size: 10px;
-        margin: -10px;
+        margin-bottom: 5px;
     }
     .headerMid p {
         margin: 5px;
-        padding: 5px;
-    }
-
-    .headerRight button {
-        min-width: 45px;
-        margin: 5px;
-    }
-
-    .headerRight span {
-        display: none;
-    }
-}
-
-@media (max-width: 390px) {
-    .headerLink {
-        margin: 5px;
-    }
-    h2 {
-        font-size: 12px;
-        margin: 10px 5px 0 0;
-    }
-    h4 {
-        font-size: 10px;
-        margin: -10px;
-    }
-    .headerMid p {
-        margin: 5px;
-        padding: 5px;
-    }
-
-    .headerRight button {
-        min-width: 45px;
-        margin: 5px;
-    }
-
-    .headerRight span {
-        display: none;
     }
 }

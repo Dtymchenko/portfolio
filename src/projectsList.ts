@@ -2,7 +2,7 @@ import { IProject } from "./interface"
 
 export const projects:IProject[]  = [
     {name: 'Web Shop',
-    description: 'Web Shop. Used content loader, basket available only when you login.',
+    description: 'Web Shop. Used content loader, basket available only when you login. Body scroll disable on basket opened.',
     URL: 'webshop',
     imageURL: '/img/webshop.png',},
     {name: 'Weather',
