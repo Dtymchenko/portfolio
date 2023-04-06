@@ -10,7 +10,7 @@ const ProjectsItem = ({project}: ProjectsItemProps) => {
         <Link to={project.URL}>
         <div className={styles.wrapper}>
             <h2>{project.name}</h2>
-            <div className={styles.img}><img src={project.imageURL} width={150} alt={project.name}></img>               </div>
+            <div className={styles.img}><img src={project.imageURL} alt={project.name}></img>               </div>
             <span>{project.description}</span>
         </div>
         </Link>

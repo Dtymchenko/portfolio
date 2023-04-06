@@ -63,35 +63,3 @@
     opacity: 0.8;
     text-transform: uppercase;
 }
-
-@media (max-width: 768px) {
-    .card {
-        padding: 10px;
-        width: 200px;
-        margin: 10px;
-    }
-}
-
-@media (max-width: 360px) {
-    .card {
-        padding: 10px;
-        width: 150px;
-        margin: 10px;
-    }
-}
-
-@media (max-width: 375px) {
-    .card {
-        padding: 10px;
-        width: 150px;
-        margin: 10px;
-    }
-}
-
-@media (max-width: 390px) {
-    .card {
-        padding: 10px;
-        width: 150px;
-        margin: 10px;
-    }
-}

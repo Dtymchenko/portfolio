@@ -15,4 +15,11 @@
 .content {
   flex-grow: 1;
   margin: 20px 10px;
+  overflow: hidden;
+}
+
+@media (min-width: 360px) and (max-width: 961) {
+  .content {
+    margin: 0 10px;
+  }
 }

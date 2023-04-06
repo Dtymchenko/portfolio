@@ -6,11 +6,20 @@
     border-radius: 10px;
     border: 1px solid gray;
     height: 100%;
+    padding: 0.5rem;
     text-align: center;
-    padding: 1rem;
+    transition: all 0.3s ease;
+     &:hover {
+        background-color: rgb(190, 186, 186);
+        transform: translateY(-5px);
+    }
 }
 
 .img {
     height: 150px;
     margin: 10px;
+    img {
+        height: 100%;
+        max-width: 100%;
+    }
 }

@@ -44,6 +44,7 @@ header svg:hover{
 .headerRight {
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .headerRight * {
@@ -54,6 +55,7 @@ header svg:hover{
     min-width: 120px;
     max-width: 250px;
     display: flex;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
     padding-right: 5px;
@@ -111,6 +113,7 @@ span {
 
     .headerLeft {
         font-size: 10px;
+        margin: 10px 5px;
     }
     .headerLink {
         margin: 5px;
@@ -130,6 +133,16 @@ span {
         height: 50px;
         border: 1px solid black;
         border-radius: 50%;
+    }
+
+    .headerRight * {
+        margin: 3px;
+    }
+
+    .signup {
+        // max-width: 150px;
+        flex-shrink: 1;
+        
     }
 
 }

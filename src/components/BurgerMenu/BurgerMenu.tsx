@@ -23,7 +23,7 @@ const BurgerMenu = () => {
 
     
   return (
-    <div className={styles.headerMid}>
+    <div className={styles.wrapper}>
       <div className={styles.burger} ref={burgerRef} onClick={() => dispatch(setMenuOpen(false))} >
         {/* <div className={styles.burgerBtn} onClick={() => dispatch(setMenuOpen(!menuOpen))}>{menuOpen? "Close" : "Open" }</div> */}
         <Link to="/about">
