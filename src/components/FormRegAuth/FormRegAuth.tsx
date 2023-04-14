@@ -41,9 +41,9 @@ const FormRegAuth: FC<FormRegAuthProps> = ({ title, handleClick }) => {
         <p>Forgot password? <button><Link to='/forgot'>Click here</Link></button></p>
         {
             window.location.pathname === '/login' ?
-                <p>Do not have an account yet? <button><Link to='/signup'>Register</Link></button></p>
+                <p>No account yet? <button><Link to='/signup'>Register</Link></button></p>
                 :
-                <p>Already have an account? <button><Link to='/login'>Sign in</Link></button></p>
+                <p>Have an account? <button><Link to='/login'>Sign in</Link></button></p>
         }
         </div>
     </div>

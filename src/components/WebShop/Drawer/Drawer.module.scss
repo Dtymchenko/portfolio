@@ -1,15 +1,21 @@
+@import '../../../CssVariables/CssVariables.css';
+
 .drawer_overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100vh - var(--header-height) - 20px);
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 10;
+    svg:hover {
+        fill: rgb(190, 131, 22);
+    }
 }
 
 .drawer {
     position: absolute;
+    top: 0;
     right: 0;
     width: 430px;
     height: 100%;
@@ -19,29 +25,30 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
-h2 {
-    margin: -5px 0 10px 0;
+.headline {
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-h2 svg {
-    cursor: pointer;
+    svg {
+        cursor: pointer;
+    }
 }
 
 .fragment {
+    height: calc(100% - 50px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: auto;
-    height: 83vh;
+    flex-shrink: 1;
+    flex-grow: 1;
 }
 
 .basket_items {
-    /* flex: 1; */
-    overflow: auto;
+    flex-shrink: 1;
+    overflow-y: scroll;
     margin-bottom: 20px;
 }
 
@@ -55,6 +62,7 @@ h2 svg {
     border: 1px solid rgb(165, 165, 165);
     border-radius: 10px;
     padding: 5px;
+    
 }
 
 .basket_item_text {
@@ -63,10 +71,6 @@ h2 svg {
 
 .basket_item_remove {
     cursor: pointer;
-}
-
-svg:hover {
-    fill: rgb(190, 131, 22);
 }
 
 .basket_total_block li {
@@ -105,15 +109,26 @@ svg:hover {
     background: #c3ec90;
 }
 
+.empty {
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
 .empty p {
     text-align: center;
     font-size: 24px;
     font-weight: 500;
-    margin: 20px;
+    margin: 10px;
 }
 
 .empty img {
-    margin: 30px auto;
+    margin: 10px auto;
+    max-height: 50%;
+    width: auto;
 }
 
 .empty button {
@@ -124,9 +139,8 @@ svg:hover {
     text-align: center;
     align-items: center;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 10px;
     border: 2px solid black;
-    height: 40px;
     transition: background 0.3s ease-in-out ;
 }
 
@@ -134,35 +148,34 @@ svg:hover {
     background-color: rgb(46, 184, 11);
 }
 
-@media (max-width: 360px) {
+@media (min-width: 320px) and (max-width: 500px) {
+
+    .drawer_overlay {
+        height: calc(100vh - var(--header-height));
+    }
+
+    .drawer {
+        width: 100%;
+        padding: 3px;
+    }
+    .headline {
+        height: 30px;
+        margin: 0 0 0 20px;
+    }
+
     .fragment {
         margin: 0 auto;
     }
-    .drawer {
-        width: 360px;
-        height: 90vh;
-    }
-    .drawer h2 {
-        margin: 0 0 0 20px;
-    }
-}
 
-@media (max-width: 375px) {
-    .drawer {
-        width: 375px;
-        height: 90vh;
+    .empty p {
+        margin: 5px;
     }
     
-}
-
-@media (max-width: 390px) {
-    .drawer {
-        width: 390px;
-        height: 90vh;
+    .empty img {
+        margin: 10px auto;
     }
-}
-
-@media (max-width: 768px) {
-    .drawer {height: 93vh;
+    
+    .empty button {
+        margin: 10px auto;
     }
 }

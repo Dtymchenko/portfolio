@@ -1,3 +1,5 @@
 :root {
     --header-height: 80px;
+    --content-vertical-margin: 20px;
+    --content-horizontal-margin: 10px;
   }

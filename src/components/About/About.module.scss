@@ -27,7 +27,7 @@ h1 {
 
 
 
-  @media (max-width: 360px) {
+  @media (max-width: 320px) {
     .about__describe__block {
         display: block;
         margin: 0 auto;
@@ -36,7 +36,7 @@ h1 {
     .about__describe__block img {
         width: 300px;
         height: auto;
-        margin: 10px;
+        margin: 5px;
     }
   }
 

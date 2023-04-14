@@ -72,7 +72,7 @@ const Header = () => {
       {email}
     </span>
   ) : (
-    'Sign Up'
+    <span className={styles.logout}>Sign Up</span>
   )}
         </Link>
       </div>

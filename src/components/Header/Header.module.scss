@@ -109,7 +109,7 @@ span {
     background-color: aqua;
 }
 
-@media (min-width: 360px) and (max-width: 766px) {
+@media (min-width: 320px) and (max-width: 766px) {
 
     .headerLeft {
         font-size: 10px;
@@ -140,11 +140,9 @@ span {
     }
 
     .signup {
-        // max-width: 150px;
         flex-shrink: 1;
-        
+        min-width: 1px;
     }
-
 }
 
 @media (min-width: 767px)  {

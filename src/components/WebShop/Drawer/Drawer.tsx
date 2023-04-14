@@ -36,7 +36,7 @@ const Drawer = () => {
   return (
     <div className={styles.drawer_overlay} onClick={onCardClose}>
       <div className={styles.drawer} ref={basketRef} onClick={(e) => e.stopPropagation()}>
-        <h2>
+        <h2 className={styles.headline}>
           Basket
           <svg
             onClick={onCardClose}

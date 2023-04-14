@@ -14,12 +14,12 @@
 
 .content {
   flex-grow: 1;
-  margin: 20px 10px;
+  margin: var(--content-vertical-margin) var(--content-horizontal-margin);
   overflow: hidden;
 }
 
-@media (min-width: 360px) and (max-width: 961) {
+@media (min-width: 320px) and (max-width: 961px) {
   .content {
-    margin: 0 10px;
+    margin: 0px 10px var(--content-vertical-margin);
   }
 }
