@@ -2,7 +2,7 @@ import styles from './Contacts.module.scss'
 
 const Contacts = () => {
   return (
-    <>
+    <div className={styles.wrapper}>
             <h1>Contacts</h1>
             <div className={styles.contact__totalBlock}>
                 <div className={styles.contact__photo}>
@@ -47,7 +47,7 @@ const Contacts = () => {
                 </div>
             </div>
             </div>            
-        </>
+        </div>
   )
 }
 

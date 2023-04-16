@@ -1,13 +1,16 @@
 @import '../../../CssVariables/CssVariables.css';
 
 .drawer_overlay {
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: var(--header-height);
+    bottom: 0;
     left: 0;
+    right: 0;
     width: 100%;
-    height: calc(100vh - var(--header-height) - 20px);
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 10;
+    z-index: 30;
+    overflow: hidden;
     svg:hover {
         fill: rgb(190, 131, 22);
     }
@@ -16,12 +19,15 @@
 .drawer {
     position: absolute;
     top: 0;
+    // top: var(--header-height);
     right: 0;
     width: 430px;
+    // margin-left: calc(100% - 430px);
     height: 100%;
+    height: calc(100vh - var(--header-height));
     background: #FFFFFF;
     box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
-    z-index: 10;
+    // z-index: 10;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -48,6 +54,7 @@
 
 .basket_items {
     flex-shrink: 1;
+    flex-grow: 1;
     overflow-y: scroll;
     margin-bottom: 20px;
 }
@@ -80,7 +87,7 @@
 }
 
 
-.basket_total_block div {
+.dots {
     position: relative;
     top: -3px;
     margin: 0 5px;
@@ -92,6 +99,17 @@
 .basket_total_block ul {
     margin-bottom: 20px;
 }
+
+// .buttons {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 20px;
+// }
+
+// .return_btn {
+//     display: none;
+// }
 
 .basket_total_block button {
     box-sizing: border-box;
@@ -152,11 +170,14 @@
 
     .drawer_overlay {
         height: calc(100vh - var(--header-height));
+        width: 100%;
     }
 
     .drawer {
         width: 100%;
-        padding: 3px;
+        height: 100%;
+        padding: 3px 3px 10px;
+        margin: 0;
     }
     .headline {
         height: 30px;
@@ -165,6 +186,12 @@
 
     .fragment {
         margin: 0 auto;
+    }
+
+    .basket_items {
+        flex-shrink: 1;
+        flex-grow: 0;
+        margin-bottom: 10px;
     }
 
     .empty p {
@@ -178,4 +205,11 @@
     .empty button {
         margin: 10px auto;
     }
+
+    // .return_btn {
+    //     display: inline-block;
+    // }
+    // .buttons button {
+    //     width: 40%;
+    // }
 }

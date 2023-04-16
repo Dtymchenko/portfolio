@@ -13,6 +13,7 @@ import ForgotPassPage from './pages/ForgotPassPage';
 import NotFoundPage from './pages/NotFoundPage';
 import WebShopPage from './pages/WebShopPage';
 import BurgerMenu from './components/BurgerMenu/BurgerMenu';
+import WeatherPage from './pages/WeatherPage';
 import { useAppSelector, useAppDispatch } from './hooks/redux-hooks';
 import { setMenuOpen } from './components/redux/slices/mainSlice';
 
@@ -42,6 +43,7 @@ function App() {
         <Route path='/forgot' element={<ForgotPassPage/>}/>
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/projects/webshop/*" element={<WebShopPage />} />
+        <Route path="/projects/weather/*" element={<WeatherPage />} />
       </Routes>
       </div>
       <Footer/>

@@ -19,3 +19,9 @@
    background-color: rgb(177, 142, 142);
  }
 }
+
+@media (min-width: 320px) and (max-width: 961px) {
+   .wrapper {
+     margin: 10px;
+   }
+ }

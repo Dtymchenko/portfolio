@@ -1,41 +1,52 @@
 import React from 'react';
-import styles from './Drawer.module.scss'
-import { useAppDispatch, useAppSelector } from "./../../../hooks/redux-hooks";
-import { toggleBasketOpened, setBasketItems } from "../../redux/slices/webShopSlice";
-import axios from "axios"
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import styles from './Drawer.module.scss';
+import { useAppDispatch, useAppSelector } from './../../../hooks/redux-hooks';
+import {
+  toggleBasketOpened,
+  setBasketItems,
+} from '../../redux/slices/webShopSlice';
+import axios from 'axios';
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from 'body-scroll-lock';
 
 const Drawer = () => {
+  const menuOpen = useAppSelector((state) => state.main.menuOpen);
   const dispatch = useAppDispatch();
   const items = useAppSelector((state) => state.webShop.basketItems);
   const basketSum = items?.reduce((acc, current) => acc + current.price, 0);
-  const basketOpened = useAppSelector((state) => state.webShop.basketOpened)
-  const basketRef = React.useRef(null)
-
+  const basketOpened = useAppSelector((state) => state.webShop.basketOpened);
+  const basketRef = React.useRef(null);
 
   const onCardClose = () => dispatch(toggleBasketOpened());
 
   React.useEffect(() => {
     if (basketOpened && basketRef?.current) {
-      disableBodyScroll(basketRef?.current)
+      disableBodyScroll(basketRef?.current);
     }
-    return () => clearAllBodyScrollLocks()
-  }, [])
+    return () => clearAllBodyScrollLocks();
+  }, [menuOpen]);
 
-  const onRemoveItem = (id:number) => {
+  const onRemoveItem = (id: number) => {
     try {
       axios.delete(`https://6319e5bb8e51a64d2befd040.mockapi.io/basket/${id}`);
       dispatch(setBasketItems(items?.filter((item) => item.id !== id)));
     } catch (err) {
-      alert("Unable to delete item from basket");
-      console.log("Unable to delete item from basket");
+      alert('Unable to delete item from basket');
+      console.log('Unable to delete item from basket');
       console.log(err);
     }
   };
 
   return (
     <div className={styles.drawer_overlay} onClick={onCardClose}>
-      <div className={styles.drawer} ref={basketRef} onClick={(e) => e.stopPropagation()}>
+      <div
+        className={styles.drawer}
+        ref={basketRef}
+        onClick={(e) => e.stopPropagation()}
+      >
         <h2 className={styles.headline}>
           Basket
           <svg
@@ -92,7 +103,7 @@ const Drawer = () => {
                   ></img>
                   <div className={styles.basket_item_text}>
                     <p>{obj.title}</p>
-                    <b>{obj.price + " USD"}</b>
+                    <b>{obj.price + ' USD'}</b>
                   </div>
                   <div
                     className={styles.basket_item_remove}
@@ -146,16 +157,21 @@ const Drawer = () => {
               <ul>
                 <li>
                   <span>Total:</span>
-                  <div></div>
+                  <div className={styles.dots}></div>
                   <b>{basketSum} USD</b>
                 </li>
                 <li>
                   <span>VAT 20%:</span>
-                  <div></div>
+                  <div className={styles.dots}></div>
                   <b>{Math.round(basketSum / 6)} USD</b>
                 </li>
               </ul>
+              {/* <div className={styles.buttons}> */}
               <button>Order</button>
+              {/* <button className={styles.return_btn} onClick={onCardClose}>
+                  Return
+                </button> */}
+              {/* </div> */}
             </div>
           </div>
         ) : (

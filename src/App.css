@@ -4,7 +4,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 1080px;
+  align-items: center;
+  max-width: var(--max-width);
   min-height: calc(100vh - var(--header-height));
   margin: calc(var(--header-height)) auto 0;
   background: #ffffff;
@@ -13,13 +14,16 @@
 }
 
 .content {
+  width: 100%;
   flex-grow: 1;
+  display: flex;
+  justify-content: center;
   margin: var(--content-vertical-margin) var(--content-horizontal-margin);
   overflow: hidden;
 }
 
 @media (min-width: 320px) and (max-width: 961px) {
   .content {
-    margin: 0px 10px var(--content-vertical-margin);
+    margin: 0;
   }
 }
