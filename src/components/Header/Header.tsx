@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
-import { getUser, removeUser, setMenuOpen } from '../redux/slices/mainSlice';
+import { getUser, removeUser, setMenuOpen } from '../../redux/slices/mainSlice';
 
 const Header = () => {
   const menuOpen = useAppSelector((state) => state.main.menuOpen);

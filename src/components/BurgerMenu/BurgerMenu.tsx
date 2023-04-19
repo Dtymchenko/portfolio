@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './BurgerMenu.module.scss';
 import { Link } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '../../hooks/redux-hooks';
-import { setMenuOpen } from '../redux/slices/mainSlice';
+import { setMenuOpen } from '../../redux/slices/mainSlice';
 import {
   disableBodyScroll,
   enableBodyScroll,

@@ -2,7 +2,7 @@ import styles from './Card.module.scss'
 import React, {FC} from "react";
 import axios from "axios";
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux-hooks';
-import { setBasketItems } from '../../redux/slices/webShopSlice';
+import { setBasketItems } from '../../../redux/slices/webShopSlice';
 import { IWebShopItem } from './../../../interface';
 
 const Card:FC<IWebShopItem> = ({ id, title, imageURL, price }) => {

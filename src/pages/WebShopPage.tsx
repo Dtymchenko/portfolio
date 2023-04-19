@@ -1,4 +1,3 @@
-import React from 'react'
 import Webshop from '../components/WebShop/Webshop'
 
 

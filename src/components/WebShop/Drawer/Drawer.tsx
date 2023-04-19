@@ -4,13 +4,9 @@ import { useAppDispatch, useAppSelector } from './../../../hooks/redux-hooks';
 import {
   toggleBasketOpened,
   setBasketItems,
-} from '../../redux/slices/webShopSlice';
+} from '../../../redux/slices/webShopSlice';
 import axios from 'axios';
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from 'body-scroll-lock';
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 const Drawer = () => {
   const menuOpen = useAppSelector((state) => state.main.menuOpen);
@@ -166,12 +162,7 @@ const Drawer = () => {
                   <b>{Math.round(basketSum / 6)} USD</b>
                 </li>
               </ul>
-              {/* <div className={styles.buttons}> */}
               <button>Order</button>
-              {/* <button className={styles.return_btn} onClick={onCardClose}>
-                  Return
-                </button> */}
-              {/* </div> */}
             </div>
           </div>
         ) : (

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IWebShopItem } from "../../../interface";
+import { IWebShopItem } from "../../interface";
 
 interface initialState {
   items: IWebShopItem[],

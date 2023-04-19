@@ -1,6 +1,6 @@
 import { useAppDispatch } from './../../hooks/redux-hooks';
 import FormRegAuth from './../FormRegAuth/FormRegAuth';
-import { setUser } from '../redux/slices/mainSlice';
+import { setUser } from '../../redux/slices/mainSlice';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom'
 

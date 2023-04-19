@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import axios from "axios";
 import ContentLoader from "react-content-loader";
 import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
-import { setItems, setBasketItems, setIsLoading } from '../redux/slices/webShopSlice';
+import { setItems, setBasketItems, setIsLoading } from '../../redux/slices/webShopSlice';
 import SearchBlock from './SearchBlock/SearchBlock';
 import Drawer from './Drawer/Drawer';
 import Card from './Card/Card';

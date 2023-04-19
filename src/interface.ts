@@ -1,7 +1,6 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { IconDefinition as SolidIconDefinition } from '@fortawesome/free-solid-svg-icons';
 
-
 export interface IWebShopItem {
   id: number;
   title: string;
@@ -68,5 +67,49 @@ export interface WeatherDetails {
     gradient: string[];
     title: string;
     subTitle: string;
+  };
+}
+
+export interface TodoItem {
+  id: number | string;
+  title: string;
+  completed: boolean;
+  userId?: number | string;
+}
+
+export interface TodoState {
+  todos: TodoItem[];
+  addOpen: boolean;
+  error: string | null;
+  formRef: string | null;
+  addTodo: (title: string) => void;
+  removeTodo: (id: number | string) => void;
+  clear: () => void;
+  setAddOpen: (bool: boolean) => void;
+  setFormRef: (str: string) => void;
+  fetchTodos: () => Promise<void>;
+}
+
+export interface IUser {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  address: {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+    geo: {
+      lat: string;
+      lng: string;
+    };
+  };
+  phone: string;
+  website: string;
+  company: {
+    name: string;
+    catchPhrase: string;
+    bs: string;
   };
 }

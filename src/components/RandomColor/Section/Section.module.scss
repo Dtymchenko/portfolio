@@ -1,0 +1,60 @@
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+    border: 1px solid black
+}
+
+.text, .icon {
+    padding: 10px;
+    }
+
+    .text p:first-child {
+        cursor: pointer;
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    .not_clicked, .clicked {
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: all 1s ease-out;
+    }
+
+    .not_clicked {
+        visibility: hidden;
+        top: -60px;
+    }
+
+    .clicked {
+        visibility: visible;
+        top: -35px;
+        opacity: 1;
+    }
+
+.icon {
+    cursor: pointer;
+}
+
+.text {
+    text-align: center;
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+    .not_clicked {
+        visibility: hidden;
+        top: -20px;
+    }
+
+    .clicked {
+        visibility: visible;
+        top: -10px;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,16 @@
+.wrapper {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  .wrapper >span {
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 320px) and (max-width: 500px) {
+    .wrapper {
+      padding: 0.5rem;
+    }
+  }

@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./SearchBlock.module.scss";
-import { setSearchValue } from "../../redux/slices/webShopSlice";
+import { setSearchValue, toggleBasketOpened } from "../../../redux/slices/webShopSlice";
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux-hooks';
-import { toggleBasketOpened } from "../../redux/slices/webShopSlice";
 
 const SearchBlock = () => {
   const dispatch = useAppDispatch()
@@ -11,7 +10,6 @@ const SearchBlock = () => {
   const onChangeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => dispatch(setSearchValue(e.target.value));
   const onCardOpen = () => dispatch(toggleBasketOpened());
   const basketItems = useAppSelector((state) => state.webShop.basketItems);
-  // const basketOpened = useSelector((state) => state.main.basketOpened);
 
   const basketSum = basketItems.reduce(
     (acc, current) => acc + current.price,

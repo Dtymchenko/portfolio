@@ -19,15 +19,12 @@
 .drawer {
     position: absolute;
     top: 0;
-    // top: var(--header-height);
     right: 0;
     width: 430px;
-    // margin-left: calc(100% - 430px);
     height: 100%;
     height: calc(100vh - var(--header-height));
     background: #FFFFFF;
     box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
-    // z-index: 10;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -99,17 +96,6 @@
 .basket_total_block ul {
     margin-bottom: 20px;
 }
-
-// .buttons {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     gap: 20px;
-// }
-
-// .return_btn {
-//     display: none;
-// }
 
 .basket_total_block button {
     box-sizing: border-box;
@@ -205,11 +191,4 @@
     .empty button {
         margin: 10px auto;
     }
-
-    // .return_btn {
-    //     display: inline-block;
-    // }
-    // .buttons button {
-    //     width: 40%;
-    // }
 }
