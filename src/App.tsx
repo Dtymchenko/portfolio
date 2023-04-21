@@ -19,6 +19,7 @@ import { setMenuOpen } from './redux/slices/mainSlice';
 import RandomColor from './components/RandomColor/RandomColor';
 import TodoListPage from './pages/TodoListPage';
 import AutoCompletePage from './pages/AutoCompletePage';
+import ConverterPage from './pages/ConverterPage';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -47,7 +48,11 @@ function App() {
           <Route path="/projects/weather/*" element={<WeatherPage />} />
           <Route path="/projects/random-color/*" element={<RandomColor />} />
           <Route path="/projects/todo-list/*" element={<TodoListPage />} />
-          <Route path="/projects/autocomplete/*" element={<AutoCompletePage />} />
+          <Route
+            path="/projects/autocomplete/*"
+            element={<AutoCompletePage />}
+          />
+          <Route path="/projects/converter/*" element={<ConverterPage />} />
         </Routes>
       </div>
       <Footer />
