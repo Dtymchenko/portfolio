@@ -20,6 +20,8 @@ import RandomColor from './components/RandomColor/RandomColor';
 import TodoListPage from './pages/TodoListPage';
 import AutoCompletePage from './pages/AutoCompletePage';
 import ConverterPage from './pages/ConverterPage';
+import ArticlesPage from './pages/ArticlesPage';
+import UsersFilterPage from './pages/UsersFilterPage';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -53,6 +55,11 @@ function App() {
             element={<AutoCompletePage />}
           />
           <Route path="/projects/converter/*" element={<ConverterPage />} />
+          <Route path="/projects/articles/*" element={<ArticlesPage />} />
+          <Route
+            path="/projects/users-filter/*"
+            element={<UsersFilterPage />}
+          />
         </Routes>
       </div>
       <Footer />

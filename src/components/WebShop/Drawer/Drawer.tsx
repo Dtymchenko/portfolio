@@ -7,6 +7,7 @@ import {
 } from '../../../redux/slices/webShopSlice';
 import axios from 'axios';
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { WEBSHOP_API } from '../../../API';
 
 const Drawer = () => {
   const menuOpen = useAppSelector((state) => state.main.menuOpen);
@@ -27,7 +28,7 @@ const Drawer = () => {
 
   const onRemoveItem = (id: number) => {
     try {
-      axios.delete(`https://6319e5bb8e51a64d2befd040.mockapi.io/basket/${id}`);
+      axios.delete(`${WEBSHOP_API}/basket/${id}`);
       dispatch(setBasketItems(items?.filter((item) => item.id !== id)));
     } catch (err) {
       alert('Unable to delete item from basket');

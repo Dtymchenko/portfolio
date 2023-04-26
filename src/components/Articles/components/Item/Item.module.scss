@@ -1,0 +1,67 @@
+.root {
+    max-width: 100%;
+    height: 100%;
+}
+.content {
+    height: 90%;
+}
+.text_content {
+    height: 54%;
+}
+.media {
+    width: 100%;
+    height: 46%;
+    min-height: 210px;
+}
+.headline {
+    height: 54%;
+    min-height: 100px;
+    margin-bottom: 15px;
+    color: #363636;
+    overflow-y: hidden;
+    //can be also scroll, for example, depending on task
+    p {
+        font-size: 22px;
+    }
+}
+.description {
+    // height: 26%;
+    font-size: 16px;
+    line-height: 150%;
+    color: #363636;
+}
+
+.bot_part {
+    height: 10%;
+    margin: 10px 0;
+}
+
+.footer {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: #363636;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0px;
+    font-size: 14px;
+    color: #363636;
+    opacity: 0.6;
+}
+
+.btn {
+    min-width: 1px !important; // I know that it is not goog idea to use important, but I tried everything and with out it - does not work!
+    position: relative;
+    span {
+        position: absolute;
+        left: 0px;
+        svg {
+            width: 12px;
+            padding: 0;
+        }
+    }
+}

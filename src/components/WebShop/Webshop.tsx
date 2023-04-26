@@ -8,6 +8,7 @@ import { setItems, setBasketItems, setIsLoading } from '../../redux/slices/webSh
 import SearchBlock from './SearchBlock/SearchBlock';
 import Drawer from './Drawer/Drawer';
 import Card from './Card/Card';
+import { WEBSHOP_API } from '../../API';
 
 const Webshop = () => {
 
@@ -23,10 +24,10 @@ const Webshop = () => {
           setIsLoading(true)
           try {
             const itemsResponse = await axios.get(
-              "https://6319e5bb8e51a64d2befd040.mockapi.io/items"
+              `${WEBSHOP_API}/items`
             );
             const basketResponse = await axios.get(
-              "https://6319e5bb8e51a64d2befd040.mockapi.io/basket"
+              `${WEBSHOP_API}/basket`
             );
             dispatch(setItems(itemsResponse.data));
             dispatch(setBasketItems(basketResponse.data));

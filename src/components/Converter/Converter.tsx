@@ -3,22 +3,21 @@ import styles from './Converter.module.scss';
 import axios from 'axios';
 import Input from './Input/Input';
 import { ICurrency } from '../../interface';
+import { CONVERTER_API } from '../../API';
 
 const Converter = () => {
-  const [date, setDate] = React.useState("");
+  const [date, setDate] = React.useState('');
   const [value1, setValue1] = React.useState(0);
   const [value2, setValue2] = React.useState(0);
 
   React.useEffect(() => {
     async function getData() {
-      const response = await axios<ICurrency[]>(
-        'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json'
-      ).catch((err) => {
+      const response = await axios<ICurrency[]>(CONVERTER_API).catch((err) => {
         console.warn(err);
         alert('Not received info');
       });
       if (response) {
-        const actualData = response.data
+        const actualData = response.data;
         const findUSD = actualData.find(
           (obj) => obj['cc'].toLowerCase() === 'usd'
         );
@@ -27,7 +26,7 @@ const Converter = () => {
         );
         setValue1(findUSD?.rate || 0);
         setValue2(findEUR?.rate || 0);
-        setDate(findUSD?.exchangedate || "");
+        setDate(findUSD?.exchangedate || '');
       }
     }
     getData();

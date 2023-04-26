@@ -1,0 +1,58 @@
+.wrapper {
+    position: relative;
+    left: -1000%;
+    animation: appear 0.7s ease-in-out forwards;
+} 
+
+@keyframes appear {
+    0% {
+        left: -1000%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+.body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 30px;
+}
+
+.img {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.text {
+    p {
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 766px) {
+    .body {
+        flex-direction: column;
+        .img {
+            margin-bottom: 10px;
+        }
+    }
+}
+    .header {
+        flex-direction: column;
+        margin-bottom: 10px;
+        gap: 10px;
+}

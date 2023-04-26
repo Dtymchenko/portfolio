@@ -5,6 +5,7 @@ import reactStringReplace from 'react-string-replace';
 import Input from './Input/Input';
 import Item from './Item/Item';
 import { IUser } from './../../interface';
+import { USERS_API } from '../../API';
 
 const AutoComplete = () => {
   const [inputValue, setInputValue] = React.useState('');
@@ -65,21 +66,6 @@ const AutoComplete = () => {
     }
   };
 
-  // const findMatch = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const searchTerm = e.target.value.trim().toUpperCase();
-  //   if (searchTerm.length) {
-  //     const matches = items.filter((item) => {
-  //       const address = `${item.address.street} ${item.address.suite} ${item.address.city} ${item.address.zipcode}`;
-  //       const values = [item.name, item.username, item.email, address];
-  //       const joinedValues = values.join(' ').toUpperCase();
-  //       return joinedValues.includes(searchTerm);
-  //     });
-  //     setMatchItems(matches);
-  //   } else {
-  //     setMatchItems(items);
-  //   }
-  // };
-
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
     findMatch(e);
@@ -88,9 +74,7 @@ const AutoComplete = () => {
   React.useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(
-          'https://jsonplaceholder.typicode.com/users'
-        );
+        const response = await axios.get(USERS_API);
         setItems(response.data);
         setMatchItems(response.data);
       } catch (err) {

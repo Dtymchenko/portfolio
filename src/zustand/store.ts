@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist, devtools } from 'zustand/middleware';
 import { nanoid } from 'nanoid';
 import { TodoItem, TodoState } from '../interface';
+import { TODO_API } from '../API';
 
 export const useTodos = create<TodoState>()(
   persist(
@@ -33,9 +34,7 @@ export const useTodos = create<TodoState>()(
       setFormRef: (str: string) => set({ formRef: str }),
       fetchTodos: async () => {
         try {
-          const res = await fetch(
-            'https://jsonplaceholder.typicode.com/todos?_limit=10'
-          );
+          const res = await fetch(`${TODO_API}?_limit=10`);
           if (!res.ok) throw new Error('Failed to fetch!');
           const newData = await res.json();
           set((state: TodoState) => {

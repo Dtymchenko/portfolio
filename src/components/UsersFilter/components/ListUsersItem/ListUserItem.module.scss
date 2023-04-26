@@ -1,0 +1,26 @@
+.list_user_item {
+    border: 1px solid grey;
+    margin-bottom: 5px;
+    padding: 5px 5px 5px 2px;
+    border-radius: 3px;
+    
+    p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.grid {
+    display: grid;
+    grid-template-columns: 20px 200px 200px 30px;
+    text-decoration: none;
+    &:visited {
+        text-decoration: none; 
+    }
+}
+
+@media (min-width: 320px) and (max-width: 766px) {
+    .grid {
+        grid-template-columns: 20px 150px 100px 30px;
+}
+}

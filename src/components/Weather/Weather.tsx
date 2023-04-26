@@ -6,15 +6,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IWeather } from '../../interface';
 import axios from 'axios';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { GETCITY_API, WEATHER_API_KEY, WEATHER_API } from '../../API';
 
 const Weather = () => {
-  const API_KEY = 'fd881d906a7e39a1f689ef8ade4b4ba4';
   const [weather, setWeather] = React.useState<IWeather | null>(null);
   const [city, setCity] = React.useState<string>('');
   const [currentWeather, setCurrentWeather] = React.useState<string>('');
 
   const getCity = async () => {
-    await axios('http://ip-api.com/json/').then((res) => {
+    await axios(GETCITY_API).then((res) => {
       setCity(res.data.city);
     });
   };
@@ -22,7 +22,7 @@ const Weather = () => {
   const getWeather = async () => {
     try {
       await axios(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+        `${WEATHER_API}?q=${city}&appid=${WEATHER_API_KEY}&units=metric`
       ).then((res) => setWeather(res.data));
     } catch (error: any) {
       alert(error.message);

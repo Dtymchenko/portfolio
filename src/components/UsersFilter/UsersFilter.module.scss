@@ -1,0 +1,21 @@
+.app {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .main_wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (min-width: 320px) and (max-width: 766px) {
+    .main_wrapper {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .app {
+      padding: 10px;
+    }
+}

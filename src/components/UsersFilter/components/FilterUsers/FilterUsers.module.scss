@@ -1,0 +1,33 @@
+.wrapper {
+    margin-right: 30px;
+    button {
+        min-width: 70px;
+        padding: 5px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    button + button {
+        margin-bottom: 10px;
+    }
+}
+
+.sort_buttons {
+    margin: 7px 0 20px;
+    input {
+        margin-right: 5px;
+    }
+    label {
+        margin-right: 20px;
+    }
+}
+
+.default_btn {
+    width: 150px;
+    height: 50px;
+    background-color: grey;
+    color: white;
+    border-radius: 10px;
+    &:hover {
+        background-color: rgb(160, 151, 151);
+    }
+}
